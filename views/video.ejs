@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <!--<script src="http://p.jwpcdn.com/6/10/jwplayer.js" crossorigin="anonymous"></script>-->
+    <script src="//bobbysapps.com/jwplayer/jwplayer.js"></script>
+    <script src="https://content.jwplatform.com/libraries/ydQ2aLfB.js"> </script>
+    <script>jwplayer.key="fn6e5Qb8hVk2Ch0XL9eJXKHeWw6FggwnZHXmJQ==";</script>
+    <title>Robert Luisi</title>
+                
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="https://v4-alpha.getbootstrap.com/examples/cover/cover.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-heading" style="background-color:black; color:black;" >
+            <div style="padding-left:20%;padding-right:20%;">
+                <div class="cover-heading" id="myDiv">Loading...</div>
+            </div>
+            <script>
+                var playerInstance = jwplayer("myDiv");
+                playerInstance.setup({
+                    "file": "http://content.jwplatform.com/videos/MlWUcqll-xIAfnggW.mp4",
+                    "image": "http://example.com/myImage.png",
+                    "width": "100%",
+                    "aspectratio": "16:9",
+                    "autostart": 'true',
+                    "repeat": 'true',
+                });
+                jwplayer().onVolume( function(event){
+                      alert('the volume is now: ' + event.volume);
+                });
+                function loadVideo() { 
+                  playerInstance.load([{
+                    "file": "http://content.jwplatform.com/videos/BGrvQHy3-xIAfnggW.mp4",
+                    
+                  }]);
+                  playerInstance.play();
+                };
+            </script>
+        </div>
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand"><%= title %></h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link" href="http://bobbysapps.com/">Home</a>
+                <a class="nav-link active" href="http://96.232.94.109/video">Video Clips</a>
+                <a class="nav-link" href="http://bobbysapps.com/aboutMe">About Me</a>
+              </nav>
+            </div>
+          </div>
+          <div class="inner cover">
+            <h1 class="cover-heading">JWPlayer Javasctipt API</h1>
+            <p>
+                <a href="#" onclick='jwplayer().play()'>Toggle playback</a> | 
+                <a href="#" onclick='alert(jwplayer().getVolume())'>Report volume</a> | 
+                <a href="javascript:loadVideo('http://content.jwplatform.com/videos/BGrvQHy3-xIAfnggW.mp4')"> Load Typing Clip | </a>
+                <a href="javascript:loadVideo('http://content.jwplatform.com/videos/MlWUcqll-xIAfnggW.mp4')"> Load Cloud Clip | </a>
+                <script>
+                  function loadVideo(myFile) { 
+                    playerInstance.load([{
+                      "file": myFile,
+                      "image": "http://example.com/myImage.png",
+                    }]);
+                    playerInstance.play();
+                  };
+                </script>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p><a href="https://www.jwplayer.com/">JWPlayer App</a>, by <a>Robert Luisi</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- JWPlayer Javascript -->
+    <script src="https://p.jwpcdn.com/6/10/jwplayer.js" crossorigin="anonymous"></script>
+  </body>
+</html>
