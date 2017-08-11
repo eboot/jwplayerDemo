@@ -7,10 +7,10 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <!--<script src="http://p.jwpcdn.com/6/10/jwplayer.js" crossorigin="anonymous"></script>-->
-    <script src="javascripts/jwplayer/jwplayer.js"></script>
+
+    
     <script src="https://content.jwplatform.com/libraries/ydQ2aLfB.js"> </script>
-    <script>jwplayer.key="fn6e5Qb8hVk2Ch0XL9eJXKHeWw6FggwnZHXmJQ==";</script>
+    <script>jwplayer.key="bGBUchMqsl6nl0l7YDZ/l58S4PYf5HTlI16jkjbP9uFK5masoDHX7gv1rvU=";</script>
     <title>Robert Luisi</title>
                 
     <!-- Bootstrap core CSS -->
@@ -22,18 +22,18 @@
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-heading" style="background-color:black; color:black;" >
-            <div style="padding-left:30%;padding-right:20%;">
+            <div style="padding-left:20%;padding-right:20%;">
                 <div class="cover-heading" id="myDiv">Loading...</div>
             </div>
             <script>
                 var playerInstance = jwplayer("myDiv");
                 playerInstance.setup({
-                    "file": "http://content.jwplatform.com/videos/BGrvQHy3-xIAfnggW.mp4",
-                    "image": "https://assets-jpcust.jwpsrv.com/thumbs/BGrvQHy3-320.jpg?1502408758520",
-                    "width": "75%",
+                    "file": "http://content.jwplatform.com/videos/MlWUcqll-xIAfnggW.mp4",
+                    "image": "http://example.com/myImage.png",
+                    "width": "100%",
                     "aspectratio": "16:9",
-                    "autostart": 'false',
-                    "repeat": 'false',
+                    "autostart": 'true',
+                    "repeat": 'true',
                     "volume": '100',
                 });
                 jwplayer().onVolume( function(event){
@@ -42,26 +42,12 @@
                 function loadVideo() { 
                   playerInstance.load([{
                     "file": "http://content.jwplatform.com/videos/BGrvQHy3-xIAfnggW.mp4",
-                    "image": "https://assets-jpcust.jwpsrv.com/thumbs/BGrvQHy3-320.jpg?1502408758520",
+                    
                   }]);
-                  // We want the PLAY button to actually play this. 
-                  // playerInstance.play();
+                  playerInstance.play();
                 };
-                jwplayer().onComplete(function(event){
-                  // Javascripts alerts are boring!  Toasts are def more fun =]
-                  alert('Complete!');
-                });
-      
-                playerInstance.onTime(function(playerPosition){
-                if((playerPosition.position > 5.0) && (playerPosition.position < 5.25)){
-                  this.seek(5.5).pause();
-                  // Do dynamic image changing here 
-                  document.getElementById('jwImage').src='http://bob.jwplayer.com/~test/assets/HardImage2.jpg';
-                }
-                });
             </script>
         </div>
-        <img id="jwImage" src="http://bob.jwplayer.com/~test/assets/HardImage1.jpg" height="auto" width="auto">
         <div class="cover-container">
 
           <div class="masthead clearfix">
@@ -71,7 +57,7 @@
                 <a class="nav-link" href="http://bobbysapps.com/">Home</a>
                 <a class="nav-link active" href="http://96.232.94.109/video">Video Clips</a>
                 <a class="nav-link" href="http://bobbysapps.com/aboutMe">About Me</a>
-                <a class="nav-link" href="http://bobbysapps.com/AssessmentPlayer">Assessment Player</a>
+                
               </nav>
             </div>
           </div>
@@ -84,18 +70,18 @@
                     Load Clip
                   </button>
                   <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <a class="dropdown-item" onclick="snackBar2()" href="javascript:loadVideo('http://content.jwplatform.com/videos/BGrvQHy3-xIAfnggW.mp4', 'https://assets-jpcust.jwpsrv.com/thumbs/BGrvQHy3-320.jpg?1502408758520')">Typing</a>
-                    <a class="dropdown-item" onclick='snackBar3()' href="javascript:loadVideo('http://bob.jwplayer.com/~test/assets/MediumVideo.mp4', 'http://bob.jwplayer.com/~test/assets/MediumImage.jpg')">Bob Scuba Diving!</a>
+                    <a class="dropdown-item" onclick="snackBar2()" href="javascript:loadVideo('http://content.jwplatform.com/videos/BGrvQHy3-xIAfnggW.mp4')">Typing</a>
+                    <a class="dropdown-item" onclick='snackBar3()' href="javascript:loadVideo('http://content.jwplatform.com/videos/MlWUcqll-xIAfnggW.mp4')">Clouds</a>
                   </div>
                 </div>
                 <h5 class="cover-heading">Try changing the volume in the clip player</h5>
                 <script>
-                  function loadVideo(myFile, myImage) { 
+                  function loadVideo(myFile) { 
                     playerInstance.load([{
                       "file": myFile,
-                      "image": myImage,
+                      "image": "http://example.com/myImage.png",
                     }]);
-                    //playerInstance.play();
+                    playerInstance.play();
                   };
                 </script>
             </div>
@@ -110,7 +96,7 @@
             </div>
             <div id="snackbar">Toggled Play!</div>
             <div id="snackbar2">Typing Clip!</div>
-            <div id="snackbar3">Bob!</div>
+            <div id="snackbar3">Clouds Clip!</div>
             <script>
               // Volume
               function getVol(){
@@ -168,7 +154,6 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <!-- JWPlayer Javascript -->
-    <script src="https://p.jwpcdn.com/6/10/jwplayer.js" crossorigin="anonymous"></script>
+    
   </body>
 </html>

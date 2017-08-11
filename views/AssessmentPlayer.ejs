@@ -10,7 +10,7 @@
     <!--<script src="http://p.jwpcdn.com/6/10/jwplayer.js" crossorigin="anonymous"></script>-->
     <script src="javascripts/jwplayer/jwplayer.js"></script>
     <script src="https://content.jwplatform.com/libraries/ydQ2aLfB.js"> </script>
-    <script>jwplayer.key="fn6e5Qb8hVk2Ch0XL9eJXKHeWw6FggwnZHXmJQ==";</script>
+    <script>jwplayer.key="bGBUchMqsl6nl0l7YDZ/l58S4PYf5HTlI16jkjbP9uFK5masoDHX7gv1rvU=";</script>
     <title>Robert Luisi</title>
                 
     <!-- Bootstrap core CSS -->
@@ -51,11 +51,11 @@
                   // Javascripts alerts are boring!  Toasts are def more fun =]
                   alert('Complete!');
                 });
-      
+                var biNum;
                 playerInstance.onTime(function(playerPosition){
-                if((playerPosition.position > 5.0) && (playerPosition.position < 5.25)){
+                if((playerPosition.position > 5.0) && (playerPosition.position < 5.49)){
                   this.seek(5.5).pause();
-                  // Do dynamic image changing here 
+                  // Do dynamic image changing here
                   document.getElementById('jwImage').src='http://bob.jwplayer.com/~test/assets/HardImage2.jpg';
                 }
                 });
@@ -66,12 +66,12 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand"><%= title %></h3>
+              <h3 class="masthead-brand">Test Player</h3>
               <nav class="nav nav-masthead">
                 <a class="nav-link" href="http://bobbysapps.com/">Home</a>
-                <a class="nav-link active" href="http://96.232.94.109/video">Video Clips</a>
+                <a class="nav-link" href="http://96.232.94.109/video">Video Clips</a>
                 <a class="nav-link" href="http://bobbysapps.com/aboutMe">About Me</a>
-                <a class="nav-link" href="http://bobbysapps.com/AssessmentPlayer">Assessment Player</a>
+                <a class="nav-link active" href="http://bobbysapps.com/AssessmentPlayer">Assessment Player</a>
               </nav>
             </div>
           </div>
@@ -95,7 +95,6 @@
                       "file": myFile,
                       "image": myImage,
                     }]);
-                    //playerInstance.play();
                   };
                 </script>
             </div>
@@ -168,7 +167,5 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <!-- JWPlayer Javascript -->
-    <script src="https://p.jwpcdn.com/6/10/jwplayer.js" crossorigin="anonymous"></script>
   </body>
 </html>

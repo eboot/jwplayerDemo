@@ -4,11 +4,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'JWPlayer Demo App' });
+  res.render('index', { title: 'JWPlayer App' });
 });
 
 router.get('/video', function(req, res, next) {
-  res.render('video', { title: 'JWPlayer Video Clips' });
+  res.render('video', { title: 'JWPlayer Demo' });
 });
 
 router.get('/aboutMe', function(req, res, next) {
@@ -18,6 +18,11 @@ router.get('/aboutMe', function(req, res, next) {
 router.get('/jwplayer', function(req, res, next) {
   //res.render('aboutMe', { title: 'Robert Luisi' });
   res.sendfile(path.resolve('public/stylesheets/style.css'));
+});
+
+router.get('/AssessmentPlayer', function(req, res, next) {
+  //res.render('aboutMe', { title: 'Robert Luisi' });
+  res.render('AssessmentPlayer', { title: 'Assesment Player' });
 });
 
 module.exports = router;
