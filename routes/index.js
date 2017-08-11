@@ -25,4 +25,9 @@ router.get('/AssessmentPlayer', function(req, res, next) {
   res.render('AssessmentPlayer', { title: 'Assesment Player' });
 });
 
+router.get('/Test', function(req, res, next) {
+  //res.render('aboutMe', { title: 'Robert Luisi' });
+  res.render('Test', { title: 'Test' });
+});
+
 module.exports = router;

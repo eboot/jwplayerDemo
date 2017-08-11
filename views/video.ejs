@@ -7,11 +7,10 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <!--<script src="http://p.jwpcdn.com/6/10/jwplayer.js" crossorigin="anonymous"></script>-->
-    <script src="javascripts/jwplayer/jwplayer.js"></script>
-    <script src="https://content.jwplatform.com/libraries/ydQ2aLfB.js"> </script>
+    <script src="//bobbysapps.com/javascripts/jwplayer.js"></script>
     <script>jwplayer.key="fn6e5Qb8hVk2Ch0XL9eJXKHeWw6FggwnZHXmJQ==";</script>
-    <title>Robert Luisi</title>
+    <!-- Key makes invalid license error happen... Validate license is correct. <script>jwplayer.key="bGBUchMqsl6nl0l7YDZ/l58S4PYf5HTlI16jkjbP9uFK5masoDHX7gv1rvU=";</script>-->
+    <title>Extra</title>
                 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -35,6 +34,10 @@
                     "autostart": 'false',
                     "repeat": 'false',
                     "volume": '100',
+                    advertising: { 
+                    client: "vast",
+                    schedule: {"myAds":{"offset":"pre","tag":"http://www.adotube.com/php/services/player/OMLService.php?avpid=oRYYzvQ&platform_version=vast20&ad_type=linear&groupbypass=1&HTTP_REFERER=http://www.longtailvideo.com&video_identifier=longtailvideo.com,test"}}
+                    }
                 });
                 jwplayer().onVolume( function(event){
                       getVol();
@@ -44,34 +47,39 @@
                     "file": "http://content.jwplatform.com/videos/BGrvQHy3-xIAfnggW.mp4",
                     "image": "https://assets-jpcust.jwpsrv.com/thumbs/BGrvQHy3-320.jpg?1502408758520",
                   }]);
+                  playerInstance.playAd('https://www.adotube.com/php/services/player/OMLService.php?avpid=oRYYzvQ&platform_version=vast20&ad_type=linear&groupbypass=1&HTTP_REFERER=http://www.longtailvideo.com&video_identifier=longtailvideo.com,test');
                   // We want the PLAY button to actually play this. 
                   // playerInstance.play();
                 };
+                jwplayer().onReady(function(event){
+                  playerInstance.playAd('https://www.adotube.com/php/services/player/OMLService.php?avpid=oRYYzvQ&platform_version=vast20&ad_type=linear&groupbypass=1&HTTP_REFERER=http://www.longtailvideo.com&video_identifier=longtailvideo.com,test')
+                });
                 jwplayer().onComplete(function(event){
                   // Javascripts alerts are boring!  Toasts are def more fun =]
-                  alert('Complete!');
+                  //playerInstance.playAd(tag)
+                  alert('Thanks for Watching!');
                 });
-      
+                var biNum;
                 playerInstance.onTime(function(playerPosition){
-                if((playerPosition.position > 5.0) && (playerPosition.position < 5.25)){
+                if((playerPosition.position > 5.0) && (playerPosition.position < 5.49)){
                   this.seek(5.5).pause();
-                  // Do dynamic image changing here 
+                  // Do dynamic image changing here
                   document.getElementById('jwImage').src='http://bob.jwplayer.com/~test/assets/HardImage2.jpg';
                 }
                 });
             </script>
         </div>
-        <img id="jwImage" src="http://bob.jwplayer.com/~test/assets/HardImage1.jpg" height="auto" width="auto">
+        <img id="jwImage" src="http://bob.jwplayer.com/~test/assets/HardImage1.jpg" height="135" width="240">
         <div class="cover-container">
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand"><%= title %></h3>
+              <h3 class="masthead-brand">Test Player</h3>
               <nav class="nav nav-masthead">
-                <a class="nav-link" href="http://bobbysapps.com/">Home</a>
-                <a class="nav-link active" href="http://96.232.94.109/video">Video Clips</a>
+                <a class="nav-link " href="http://bobbysapps.com/">Home</a>
+                <a class="nav-link active" href="http://bobbysapps.com/video">Video Clips</a>
+                <a class="nav-link" href="http://bobbysapps.com/AssessmentPlayer">Extra</a>
                 <a class="nav-link" href="http://bobbysapps.com/aboutMe">About Me</a>
-                <a class="nav-link" href="http://bobbysapps.com/AssessmentPlayer">Assessment Player</a>
               </nav>
             </div>
           </div>
@@ -86,6 +94,7 @@
                   <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                     <a class="dropdown-item" onclick="snackBar2()" href="javascript:loadVideo('http://content.jwplatform.com/videos/BGrvQHy3-xIAfnggW.mp4', 'https://assets-jpcust.jwpsrv.com/thumbs/BGrvQHy3-320.jpg?1502408758520')">Typing</a>
                     <a class="dropdown-item" onclick='snackBar3()' href="javascript:loadVideo('http://bob.jwplayer.com/~test/assets/MediumVideo.mp4', 'http://bob.jwplayer.com/~test/assets/MediumImage.jpg')">Bob Scuba Diving!</a>
+                    <a class="dropdown-item" onclick='snackBar4()' href="javascript:loadVideo('http://bob.jwplayer.com/~test/assets/EasyVideo.mp4', 'http://bob.jwplayer.com/~test/assets/EasyImage.jpg')">Easy!</a>
                   </div>
                 </div>
                 <h5 class="cover-heading">Try changing the volume in the clip player</h5>
@@ -95,7 +104,6 @@
                       "file": myFile,
                       "image": myImage,
                     }]);
-                    //playerInstance.play();
                   };
                 </script>
             </div>
@@ -111,6 +119,7 @@
             <div id="snackbar">Toggled Play!</div>
             <div id="snackbar2">Typing Clip!</div>
             <div id="snackbar3">Bob!</div>
+            <div id="snackbar4">Easy!</div>
             <script>
               // Volume
               function getVol(){
@@ -155,6 +164,17 @@
                   // After 3 seconds, remove the show class from DIV
                   setTimeout(function(){ y.className = y.className.replace("show", ""); }, 3000);
               };
+                            // clouds toast message
+              function snackBar4() {
+                  // Get the snackbar DIV
+                  var y = document.getElementById("snackbar4")
+
+                  // Add the "show" class to DIV
+                  y.className = "show";
+
+                  // After 3 seconds, remove the show class from DIV
+                  setTimeout(function(){ y.className = y.className.replace("show", ""); }, 3000);
+              };
             </script>
           </div>
 
@@ -168,7 +188,5 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <!-- JWPlayer Javascript -->
-    <script src="https://p.jwpcdn.com/6/10/jwplayer.js" crossorigin="anonymous"></script>
   </body>
 </html>
